@@ -1,0 +1,33 @@
+/*!
+ *  \file QtTwo.h
+ *
+ *  \brief This is the API header of the Qt Two library
+ *  \author Stefano Takekawa s.takekawa_at_gmail.com
+ *  \date 2017
+ *  \copyright Apache Licence 2.0
+ */
+
+
+#ifndef QTTWO_H
+#define QTTWO_H
+
+
+/*                                                                            */
+/* definition of version stuff                                                */
+/*                                                                            */
+#define QTTWO_LIBRARY_VERSION_STRING                 "@PROJECT_BASEVERSION@"
+#define QTTWO_LIBRARY_VERSION_MAJOR                  @PROJECT_BASEVERSION_MAJOR@
+#define QTTWO_LIBRARY_VERSION_MINOR                  @PROJECT_BASEVERSION_MINOR@
+#define QTTWO_LIBRARY_VERSION_PATCH                  @PROJECT_BASEVERSION_PATCH@
+#define QTTWO_LIBRARY_VERSION                        (10000 * QTTWO_LIBRARY_VERSION_MAJOR + \
+                                                     100 * QTTWO_LIBRARY_VERSION_MINOR + \
+                                                     QTTWO_LIBRARY_VERSION_PATCH )
+
+/*                                                                            */
+/* layers includes                                                            */
+/*                                                                            */
+#include "QtTwo/QDpiHelper.h"
+#include "QtTwo/QTabHorizontalLabelsProxyStyle.h"
+
+
+#endif // QTTWO_H
