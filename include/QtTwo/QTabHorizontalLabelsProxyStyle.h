@@ -16,6 +16,9 @@
 #include <QStyleOption>
 
 
+QT_BEGIN_NAMESPACE
+
+
 /*!
  *  \brief The QTabHorizontalLabelsProxyStyle class implements a style for the
  *         QTabWidget to allow to have horizontal aligned labels on tabs on
@@ -25,23 +28,31 @@
  *         QTabWidget* tabW;
  *         tabW->tabBar()->setStyle(new QTabHorizontalLabelsProxyStyle());
  */
-class QTabHorizontalLabelsProxyStyle : public QProxyStyle
+class Q_WIDGETS_EXPORT QTabHorizontalLabelsProxyStyle : public QProxyStyle
 {
     Q_OBJECT
 
 
 public:
 
-    explicit QTabHorizontalLabelsProxyStyle(QStyle* p_style = 0);
+    explicit QTabHorizontalLabelsProxyStyle(QStyle* p_style = Q_NULLPTR);
 
     virtual ~QTabHorizontalLabelsProxyStyle();
 
-    virtual QSize sizeFromContents(ContentsType p_type, const QStyleOption* p_option, const QSize& p_size, const QWidget* p_widget) const;
+    QSize sizeFromContents(ContentsType p_type, const QStyleOption* p_option, const QSize& p_size, const QWidget* p_widget) const Q_DECL_OVERRIDE;
 
-    virtual void drawControl(ControlElement p_element, const QStyleOption* p_option, QPainter* p_painter, const QWidget* p_widget) const;
+    void drawControl(ControlElement p_element, const QStyleOption* p_option, QPainter* p_painter, const QWidget* p_widget) const Q_DECL_OVERRIDE;
+
+
+private:
+
+    Q_DISABLE_COPY(QTabHorizontalLabelsProxyStyle)
 
 
 };
+
+
+QT_END_NAMESPACE
 
 
 #endif // QTABHORIZONTALLABELSPROXYSTYLE_H

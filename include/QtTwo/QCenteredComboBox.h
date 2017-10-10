@@ -15,30 +15,41 @@
 #include <QComboBox>
 
 
+QT_BEGIN_NAMESPACE
+
+
 /*!
  *  \brief The QCenteredComboBox class is a QComboBox which automatically keeps
  *         each item with Qt::AlignCenter alignment.
  */
-class QCenteredComboBox : public QComboBox
+class Q_WIDGETS_EXPORT QCenteredComboBox : public QComboBox
 {
     Q_OBJECT
 
 
 public:
 
-    explicit QCenteredComboBox(QWidget* p_parent = 0);
+    explicit QCenteredComboBox(QWidget* p_parent = Q_NULLPTR);
 
     virtual ~QCenteredComboBox();
 
-    virtual void addItem(const QString& p_text, const QVariant& p_data = QVariant());
+    void addItem(const QString& p_text, const QVariant& p_data = QVariant());
 
 
 protected:
 
-    bool eventFilter(QObject* p_object, QEvent* p_event) override;
+    bool eventFilter(QObject* p_object, QEvent* p_event) Q_DECL_OVERRIDE;
+
+
+private:
+
+    Q_DISABLE_COPY(QCenteredComboBox)
 
 
 };
+
+
+QT_END_NAMESPACE
 
 
 #endif // QCENTEREDCOMBOBOX_H
