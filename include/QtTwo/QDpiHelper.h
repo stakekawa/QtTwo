@@ -12,7 +12,10 @@
 #define QDPIHELPER_H
 
 
-class QWidget;
+#include <QWidget>
+
+
+QT_BEGIN_NAMESPACE
 
 
 /*!
@@ -71,6 +74,9 @@ private:
 
 
 };
+
+
+QT_END_NAMESPACE
 
 
 #endif // QDPIHELPER_H

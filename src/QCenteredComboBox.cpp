@@ -13,6 +13,9 @@
 #include "QCenteredComboBox.h"
 
 
+QT_BEGIN_NAMESPACE
+
+
 /*                                                                            */
 /* Public members                                                             */
 /*                                                                            */
@@ -84,3 +87,6 @@ bool QCenteredComboBox::eventFilter(QObject* p_object, QEvent* p_event)
 
     return l_return;
 }
+
+
+QT_END_NAMESPACE

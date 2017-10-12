@@ -13,6 +13,7 @@
 
 
 #include <cassert> // assert
+#include <QMetaObject>
 #include <QObject>
 
 
@@ -29,8 +30,12 @@
 #define QTTWO_SPACER_H         new QSpacerItem(k_marginNormal, k_marginNormal, QSizePolicy::Expanding, QSizePolicy::Minimum)
 #define QTTWO_SPACER_V         new QSpacerItem(k_marginNormal, k_marginNormal, QSizePolicy::Minimum, QSizePolicy::Expanding)
 
-#define QTTWO_CONNECT(x)                        assert(0 == QObject::connect(x))
-#define QTTWO_TR(x)                                               QObject::tr(x)
+#define QTTWO_CONNECT2(x, y)                          QObject::connect((x), (y))
+#define QTTWO_CONNECT3(x, y, z)                  QObject::connect((x), (y), (z))
+#define QTTWO_CONNECT4(w, x, y, z)          QObject::connect((w), (x), (y), (z))
+#define QTTWO_CONNECT5(v, w, x, y, z)  QObject::connect((v), (w), (x), (y), (z))
+#define QTTWO_DISCONNECT(x)                             QObject::disconnect((x))
+#define QTTWO_TR(x)                                             QObject::tr((x))
 
 
 #endif // QTTWODEFINES_H

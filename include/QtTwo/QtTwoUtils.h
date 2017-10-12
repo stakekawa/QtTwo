@@ -17,6 +17,9 @@
 #include <QWidget>
 
 
+QT_BEGIN_NAMESPACE
+
+
 class QComboBox;
 class QDoubleSpinBox;
 class QObject;
@@ -161,6 +164,9 @@ inline void deleteWidget(T_Widget*& p_widget)
         p_widget = NULL; /* this is right: set the function parameter to NULL */
     }
 }
+
+
+QT_END_NAMESPACE
 
 
 #endif // QTTWOUTILS_H

@@ -13,6 +13,9 @@
 #include "QDpiHelper.h"
 
 
+QT_BEGIN_NAMESPACE
+
+
 /*                                                                            */
 /* Private data                                                               */
 /*                                                                            */
@@ -59,3 +62,6 @@ int QDpiHelper::dpi(const QWidget* p_widget)
     const int l_screenNumber = QApplication::desktop()->screenNumber(p_widget);
     return QApplication::desktop()->screen(l_screenNumber)->logicalDpiX();
 }
+
+
+QT_END_NAMESPACE

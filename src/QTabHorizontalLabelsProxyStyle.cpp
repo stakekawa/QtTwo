@@ -11,6 +11,9 @@
 #include "QTabHorizontalLabelsProxyStyle.h"
 
 
+QT_BEGIN_NAMESPACE
+
+
 /*                                                                            */
 /* Public members                                                             */
 /*                                                                            */
@@ -62,3 +65,5 @@ void QTabHorizontalLabelsProxyStyle::drawControl(ControlElement p_element, const
     QProxyStyle::drawControl(p_element, p_option, p_painter, p_widget);
 }
 
+
+QT_END_NAMESPACE

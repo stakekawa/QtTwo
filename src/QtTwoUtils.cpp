@@ -20,6 +20,9 @@
 #include "QtTwoUtils.h"
 
 
+QT_BEGIN_NAMESPACE
+
+
 void configureQPushButtons(QWidget* p_widget, const int p_width, const int p_height)
 {
     if ((NULL != p_widget) &&
@@ -194,3 +197,6 @@ void setQWidgetTextColor(const QColor& p_color, QWidget* p_widget)
         p_widget->setPalette(l_palette);
     }
 }
+
+
+QT_END_NAMESPACE
