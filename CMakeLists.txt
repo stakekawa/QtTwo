@@ -68,6 +68,7 @@ find_package(Qt5Widgets)
 set(PROJECT_SOURCES ${PROJECT_SRC_DIR}/QCenteredComboBox.cpp
                     ${PROJECT_SRC_DIR}/QDpiHelper.cpp
                     ${PROJECT_SRC_DIR}/QTabHorizontalLabelsProxyStyle.cpp
+                    ${PROJECT_SRC_DIR}/QUnixSignalCatcher.cpp
                     ${PROJECT_SRC_DIR}/QtTwoUtils.cpp)
 
 #
@@ -77,6 +78,7 @@ set(PROJECT_HEADERS ${PROJECT_INCLUDE_DIR}/${PROJECT_BASENAME}.h
                     ${PROJECT_INCLUDE_DIR}/${PROJECT_BASENAME}/QCenteredComboBox.h
                     ${PROJECT_INCLUDE_DIR}/${PROJECT_BASENAME}/QDpiHelper.h
                     ${PROJECT_INCLUDE_DIR}/${PROJECT_BASENAME}/QTabHorizontalLabelsProxyStyle.h
+                    ${PROJECT_INCLUDE_DIR}/${PROJECT_BASENAME}/QUnixSignalCatcher.h
                     ${PROJECT_INCLUDE_DIR}/${PROJECT_BASENAME}/QtTwoUtils.h)
 
 
