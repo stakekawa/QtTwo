@@ -13,6 +13,7 @@
 #include <QComboBox>
 #include <QDoubleSpinBox>
 #include <QLineEdit>
+#include <QPointer>
 #include <QPushButton>
 #include <QSpinBox>
 #include <QStandardItemModel>
@@ -196,6 +197,33 @@ void setQWidgetTextColor(const QColor& p_color, QWidget* p_widget)
 
         p_widget->setPalette(l_palette);
     }
+}
+
+
+void showQMessage(const QString& p_windowTitle, const QMessageBox::Icon p_iconEnum, const QString& p_text, const QString& p_informativeText, QWidget* p_parent)
+{
+    QPointer<QMessageBox> l_messageBox = new QMessageBox(p_parent);
+
+    l_messageBox->setWindowTitle(p_windowTitle);
+    l_messageBox->setAttribute(Qt::WA_DeleteOnClose);
+
+    l_messageBox->setText(p_text);
+    l_messageBox->setInformativeText(p_informativeText);
+
+    l_messageBox->setStandardButtons(QMessageBox::Ok);
+    l_messageBox->setButtonText(QMessageBox::Ok, QObject::tr("Ok"));
+    l_messageBox->setIcon(p_iconEnum);
+
+    /* center the QMessageBox on screen if it has     */
+    /* no parent of the parent is not currently shown */
+
+    if ((NULL == p_parent) ||
+        (true == p_parent->isHidden())) /* p_parent is surely not NULL because failed (NULL == p_parent) */
+    {
+        centerQWidgetOnScreen(l_messageBox);
+    }
+
+    showNonModalQWidget(l_messageBox, true);
 }
 
 

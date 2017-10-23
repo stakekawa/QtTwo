@@ -14,6 +14,7 @@
 
 #include <functional> // std::function
 #include <QLayout>
+#include <QMessageBox>
 #include <QWidget>
 
 
@@ -163,6 +164,56 @@ inline void deleteWidget(T_Widget*& p_widget)
         delete l_widget;
         p_widget = NULL; /* this is right: set the function parameter to NULL */
     }
+}
+
+
+/*!
+ *  \brief Show a QMessageBox
+ *
+ *  \param p_windowTitle title of the window
+ *  \param p_iconEnum icon to show
+ *  \param p_text text to show
+ *  \param p_informativeText informative text to show
+ */
+void showQMessage(const QString& p_windowTitle, const QMessageBox::Icon p_iconEnum, const QString& p_text, const QString& p_informativeText, QWidget* p_parent = 0);
+
+
+/*!
+ *  \brief Show a warning QMessageBox
+ *
+ *  \param p_windowTitle title of the window
+ *  \param p_text text to show
+ *  \param p_informativeText informative text to show
+ */
+inline void showQMessageWarning(const QString& p_text, const QString& p_informativeText, QWidget* p_parent = 0)
+{
+    showQMessage(QObject::tr("Warning"), QMessageBox::Warning, p_text, p_informativeText, p_parent);
+}
+
+
+/*!
+ *  \brief Show an error QMessageBox
+ *
+ *  \param p_windowTitle title of the window
+ *  \param p_text text to show
+ *  \param p_informativeText informative text to show
+ */
+inline void showQMessageError(const QString& p_text, const QString& p_informativeText, QWidget* p_parent = 0)
+{
+    showQMessage(QObject::tr("Error"), QMessageBox::Critical, p_text, p_informativeText, p_parent);
+}
+
+
+/*!
+ *  \brief Show an informative QMessageBox
+ *
+ *  \param p_windowTitle title of the window
+ *  \param p_text text to show
+ *  \param p_informativeText informative text to show
+ */
+inline void showQMessageInfo(const QString& p_text, const QString& p_informativeText, QWidget* p_parent = 0)
+{
+    showQMessage(QObject::tr("Info"), QMessageBox::Information, p_text, p_informativeText, p_parent);
 }
 
 
